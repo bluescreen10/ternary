@@ -17,10 +17,8 @@ package ternary
 // the second is the value that gets returned if cond is true, and the third
 // argument is the value that gets returned if cond is false.
 func T[T any](cond bool, ifTrue, ifFalse T) T {
-	switch cond {
-	case true:
+	if cond {
 		return ifTrue
-	default:
-		return ifFalse
 	}
+	return ifFalse
 }
